@@ -14,7 +14,7 @@ def index = Action { implicit request: Request[AnyContent] =>
 Ok("Backend opérationnel. Utilise POST /clean pour envoyer un CSV.")
 }
 
-def cleanData = Action(parse.multipartFormData) { request =>
+def cleanMissing = Action(parse.multipartFormData) { request =>
 
 request.body.file("csvFile").map { csv =>
 
